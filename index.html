@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; font-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; manifest-src 'self'; media-src 'none'">
+  <meta name="theme-color" content="#080806">
+  <meta name="description" content="An exact, browser-based exploration of golden-ratio frequency relationships through mathematics, local sound synthesis, and visual structure.">
+  <title>φ · Golden Ratio Frequency Lab</title>
+  <link rel="icon" href="assets/phi-mark.svg" type="image/svg+xml">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#experience">Skip to experience</a>
+
+  <header class="site-header" aria-label="Primary">
+    <a class="brand" href="#top" aria-label="Golden Ratio Frequency Lab home">
+      <span class="brand-mark" aria-hidden="true">φ</span>
+      <span class="brand-copy">Golden Ratio Frequency Lab</span>
+    </a>
+    <nav aria-label="Sections">
+      <a href="#experience">Experience</a>
+      <a href="#structure">Structure</a>
+      <a href="#method">Method</a>
+      <a href="#boundary">Evidence</a>
+    </nav>
+    <a class="header-cta" href="#experience">Enter lab</a>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Golden Ratio Frequency Package · v1.1.3</p>
+        <h1 id="hero-title">The golden ratio,<br><span>made audible.</span></h1>
+        <p class="lede"><strong>φ is a number, not a frequency.</strong> This lab maps powers of the golden ratio onto frequency ratios from any anchor you choose, then lets you see, hear, and verify the result.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#experience">Enter the experience</a>
+          <a class="button ghost" href="#method">Understand the method</a>
+        </div>
+        <div class="hero-proof" aria-label="Experience principles">
+          <span><strong>Exact</strong> ratio math</span>
+          <span><strong>Local</strong> audio synthesis</span>
+          <span><strong>Clear</strong> evidence boundary</span>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <canvas id="spiralCanvas" width="760" height="760"></canvas>
+        <div class="phi-core">
+          <span class="phi-glyph">φ</span>
+          <span class="phi-number">1.61803398875</span>
+          <span class="phi-caption">dimensionless ratio</span>
+        </div>
+      </div>
+
+      <p class="hero-boundary">Mathematics and acoustics are demonstrated. Healing, biological, paranormal, and cosmic-frequency claims are not.</p>
+    </section>
+
+    <section class="principle-strip" aria-label="Key facts">
+      <div><span class="strip-label">Golden ratio</span><strong>φ = (1 + √5) / 2</strong></div>
+      <div><span class="strip-label">Frequency construction</span><strong>fₙ = f₀ × φⁿ</strong></div>
+      <div><span class="strip-label">Anchor principle</span><strong>φ stays the same</strong></div>
+    </section>
+
+    <section class="lab section" id="experience" aria-labelledby="experience-title">
+      <div class="section-intro">
+        <div>
+          <p class="eyebrow">Interactive instrument</p>
+          <h2 id="experience-title">Tune the ratio.</h2>
+        </div>
+        <p>Choose a reference frequency, move through integer powers of φ, and hear the resulting pure sine tone. The math is anchor-independent; the anchor only chooses where the ladder begins.</p>
+      </div>
+
+      <div class="lab-shell">
+        <div class="control-panel panel">
+          <div class="panel-label">01 · Reference</div>
+          <fieldset>
+            <legend>Anchor frequency</legend>
+            <div class="segmented" role="group" aria-label="Anchor frequency presets">
+              <button type="button" class="segment active" data-anchor="440" aria-pressed="true">
+                <span class="segment-main">440 Hz</span><span class="segment-sub">ISO A4 reference</span>
+              </button>
+              <button type="button" class="segment" data-anchor="432" aria-pressed="false">
+                <span class="segment-main">432 Hz</span><span class="segment-sub">creative reference</span>
+              </button>
+              <button type="button" class="segment" data-anchor="custom" aria-pressed="false">
+                <span class="segment-main">Custom</span><span class="segment-sub">20–20,000 Hz</span>
+              </button>
+            </div>
+            <label class="custom-anchor" for="customAnchor">
+              Custom anchor
+              <span class="input-with-unit">
+                <input id="customAnchor" type="number" min="20" max="20000" step="0.01" value="440" inputmode="decimal" disabled>
+                <span>Hz</span>
+              </span>
+            </label>
+            <p class="microcopy">440 Hz is the ISO 16 standard tuning reference for A. 432 Hz is included as an optional creative reference, not as a privileged biological or cosmic frequency.</p>
+          </fieldset>
+
+          <div class="control-rule"></div>
+
+          <div class="control-block">
+            <div class="panel-label">02 · Ratio step</div>
+            <div class="control-label-row">
+              <label for="exponent">Integer power of φ</label>
+              <output id="exponentOutput" for="exponent">n = 0</output>
+            </div>
+            <input id="exponent" type="range" min="-6" max="6" step="1" value="0">
+            <div class="range-labels" aria-hidden="true"><span>φ⁻⁶</span><span>φ⁰</span><span>φ⁶</span></div>
+          </div>
+
+          <div class="control-block">
+            <div class="panel-label">03 · Output</div>
+            <div class="control-label-row">
+              <label for="volume">Output gain</label>
+              <output id="volumeOutput" for="volume">0.08</output>
+            </div>
+            <input id="volume" type="range" min="0" max="0.20" step="0.01" value="0.08">
+            <p class="microcopy">Gain is an amplitude control, not a calibrated loudness or dB SPL measurement. Device output varies. Start low.</p>
+          </div>
+
+          <div class="transport" role="group" aria-label="Audio controls">
+            <button id="playButton" class="button primary transport-button" type="button">
+              <span class="play-icon" aria-hidden="true">▶</span>
+              <span class="play-label">Play tone</span>
+            </button>
+            <button id="playScaleButton" class="button ghost transport-button" type="button">Play 12-step φ set</button>
+            <button id="stopButton" class="button ghost transport-button" type="button">Stop</button>
+          </div>
+          <p class="playback-note"><span id="playbackDot" aria-hidden="true"></span><span id="playbackStatus">Playback available for this frequency.</span></p>
+          <p id="audioStatus" class="sr-only" role="status" aria-live="polite"></p>
+        </div>
+
+        <div class="readout-panel panel">
+          <div class="readout-topline">
+            <p class="readout-kicker">Selected frequency</p>
+            <span class="readout-badge" id="referenceBadge">440 Hz reference</span>
+          </div>
+          <div class="frequency-readout"><span id="frequencyValue">440.000</span><span class="unit">Hz</span></div>
+          <div class="formula-readout" aria-label="Selected frequency formula">
+            <span>f</span><sub>n</sub><span>=</span><span id="anchorFormula">440</span><span>×</span><span>φ</span><sup id="exponentFormula">0</sup>
+          </div>
+
+          <div class="ratio-viz" aria-hidden="true">
+            <div class="ratio-line"></div>
+            <span class="ratio-origin">f₀</span>
+            <span class="ratio-selected" id="ratioVisualLabel">× 1</span>
+          </div>
+
+          <dl class="metrics">
+            <div><dt>Frequency ratio</dt><dd id="ratioValue">1.000000000</dd></div>
+            <div><dt>Interval from anchor</dt><dd id="centsValue">0.000 cents</dd></div>
+            <div><dt>Period</dt><dd id="periodValue">2.2727 ms</dd></div>
+            <div><dt>Air wavelength*</dt><dd id="wavelengthValue">0.7795 m</dd></div>
+          </dl>
+          <p class="microcopy">*Calculated with λ = v/f using 343 m/s as a room-temperature approximation near 20 °C. Actual sound speed varies with atmospheric conditions.</p>
+          <div class="readout-actions">
+            <button id="copyButton" class="text-button" type="button">Copy selected frequency</button>
+            <button id="downloadCsvButton" class="text-button" type="button">Download this ladder · CSV</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="structure" aria-labelledby="structure-title">
+      <div class="section-intro">
+        <div>
+          <p class="eyebrow">Frequency structure</p>
+          <h2 id="structure-title">Thirteen powers. One invariant ratio.</h2>
+        </div>
+        <p>Each card is generated from the same anchor and the same equation. Select a step to update the instrument. Playback is enabled only when the selected frequency is within 20–20,000 Hz.</p>
+      </div>
+      <div id="frequencyGrid" class="frequency-grid" aria-label="Golden ratio frequency ladder"></div>
+    </section>
+
+    <section class="section octave-section" aria-labelledby="octave-title">
+      <div class="section-intro">
+        <div>
+          <p class="eyebrow">Octave folding</p>
+          <h2 id="octave-title">A 12-step experimental φ set.</h2>
+        </div>
+        <p>Repeated multiplication by φ can be folded into one octave by removing powers of two. Here we sample source exponents 0–11 and sort the resulting pitch classes. <strong>Twelve is a design choice for this demonstration, not a canonical golden-ratio scale.</strong></p>
+      </div>
+      <div class="octave-shell panel">
+        <div class="octave-axis" aria-hidden="true"><span>1×</span><span>2× · octave</span></div>
+        <div id="octaveGrid" class="octave-grid" aria-label="Twelve-step octave-folded golden ratio set"></div>
+      </div>
+    </section>
+
+    <section class="section split-section" id="method" aria-labelledby="method-title">
+      <div class="section-heading sticky-heading">
+        <p class="eyebrow">Method</p>
+        <h2 id="method-title">Nothing hidden.<br>Everything reproducible.</h2>
+        <p class="method-lede">The experience is generated from explicit definitions. No frequency list is hand-picked to create a desired result.</p>
+      </div>
+      <div class="method-stack">
+        <article class="method-card">
+          <span class="method-number">01</span>
+          <div><h3>Define φ</h3><p class="equation">φ = (1 + √5) / 2</p><p>φ is the dimensionless irrational number approximately equal to <strong>1.618033988749895</strong>.</p></div>
+        </article>
+        <article class="method-card">
+          <span class="method-number">02</span>
+          <div><h3>Map ratio to frequency</h3><p class="equation">fₙ = f₀ × φⁿ</p><p>Choose any positive anchor frequency f₀. Each integer step multiplies or divides it by φ.</p></div>
+        </article>
+        <article class="method-card">
+          <span class="method-number">03</span>
+          <div><h3>Express the interval</h3><p class="equation">c = 1200 log₂(r)</p><p>Cents express the logarithmic interval of frequency ratio r. A 2:1 octave equals 1200 cents by definition.</p></div>
+        </article>
+        <article class="method-card">
+          <span class="method-number">04</span>
+          <div><h3>Fold into one octave</h3><p class="equation">rₙ = 2<sup>((n log₂ φ) mod 1)</sup></p><p>This preserves each φ-derived pitch class modulo octave equivalence. The 12 displayed source exponents are one finite sample of an irrational rotation.</p></div>
+        </article>
+        <article class="method-card">
+          <span class="method-number">05</span>
+          <div><h3>Observe Fibonacci convergence</h3><p class="equation">Fₙ₊₁ / Fₙ → φ</p><p>Ratios of consecutive Fibonacci numbers converge toward φ, alternating around it as n increases.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section evidence-section" id="boundary" aria-labelledby="boundary-title">
+      <div class="section-intro">
+        <div>
+          <p class="eyebrow">Evidence boundary</p>
+          <h2 id="boundary-title">Keep the signal clean.</h2>
+        </div>
+        <p>A compelling pattern is not automatically a physical mechanism. This package separates exact definitions and acoustic calculations from optional interpretation.</p>
+      </div>
+      <div class="boundary-grid">
+        <article class="boundary-card established">
+          <p class="status">Established / defined</p>
+          <h3>What the lab demonstrates</h3>
+          <ul>
+            <li>The exact mathematical definition and identities of φ.</li>
+            <li>Frequency ratios generated from integer powers of φ.</li>
+            <li>Period, cents, and approximate air wavelength calculated from explicit formulas.</li>
+            <li>Octave folding by powers of two.</li>
+            <li>Convergence of consecutive Fibonacci ratios toward φ.</li>
+          </ul>
+        </article>
+        <article class="boundary-card contextual">
+          <p class="status">Context / convention</p>
+          <h3>What depends on a chosen reference</h3>
+          <ul>
+            <li>440 Hz is the ISO 16 standard tuning frequency for the musical note A.</li>
+            <li>432 Hz is offered here only as an alternate creative reference.</li>
+            <li>The 12-step octave-folded set is an experimental sample, not a universal tuning system.</li>
+            <li>343 m/s is an approximate sound speed used only for the wavelength display.</li>
+          </ul>
+        </article>
+        <article class="boundary-card unestablished">
+          <p class="status">Not established</p>
+          <h3>Claims the package does not make</h3>
+          <ul>
+            <li>That 432 Hz or any φ-derived tone is biologically or cosmically privileged.</li>
+            <li>That these tones uniquely heal, alter DNA, or produce specific neurological effects.</li>
+            <li>That the geometry proves a paranormal or metaphysical mechanism.</li>
+            <li>That golden-ratio tuning is inherently superior to other tuning systems.</li>
+          </ul>
+        </article>
+      </div>
+      <p class="interpretation-note">Symbolic, aesthetic, contemplative, spiritual, or metaphysical meaning may be explored as interpretation. It is not presented here as scientific proof.</p>
+    </section>
+
+    <section class="section provenance-section" aria-labelledby="provenance-title">
+      <div class="provenance-card">
+        <p class="eyebrow">Provenance & reproducibility</p>
+        <h2 id="provenance-title">Inspect the construction.</h2>
+        <p>The browser runs this static experience locally. The public repository contains the site and its dataset; the validation package and detailed V&V evidence are maintained separately and are not included in this public repository.</p>
+        <div class="provenance-actions">
+          <a class="button primary" href="data/frequency-table.json">Open reproducible data · JSON</a>
+          <a class="button ghost" href="#boundary">Read evidence boundary</a>
+          <a class="button ghost external" href="https://www.iso.org/standard/3601.html" target="_blank" rel="noopener noreferrer">ISO 16:1975 ↗</a>
+        </div>
+        <p class="privacy-line">No analytics · No cookies · No external runtime dependencies · No uploaded or streamed audio</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><span class="footer-mark">φ</span> Golden Ratio Frequency Lab</div>
+    <p>Use a comfortable listening level. Pure tones can be fatiguing. Stop if you experience discomfort.</p>
+  </footer>
+
+  <script src="assets/app.js" defer></script>
+</body>
+</html>

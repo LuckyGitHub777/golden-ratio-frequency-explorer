@@ -1,0 +1,417 @@
+{
+  "schema_version": "1.0.0",
+  "phi": 1.618033988749895,
+  "golden_angle_degrees": 137.50776405003785,
+  "assumptions": {
+    "speed_of_sound_air_m_s": 343,
+    "speed_of_sound_note": "Approximate value used for display near 20 \u00b0C; actual speed varies with conditions."
+  },
+  "phi_ladders": [
+    {
+      "anchor_hz": 432,
+      "exponent": -6,
+      "ratio": 0.0557280900008412,
+      "frequency_hz": 24.074534880363398,
+      "cents_from_anchor": -4998.541778140446,
+      "period_ms": 41.537666458331394,
+      "wavelength_air_20c_m": 14.247419595207669
+    },
+    {
+      "anchor_hz": 432,
+      "exponent": -5,
+      "ratio": 0.09016994374947422,
+      "frequency_hz": 38.95341569977286,
+      "cents_from_anchor": -4165.451481783704,
+      "period_ms": 25.671689684605273,
+      "wavelength_air_20c_m": 8.805389561819608
+    },
+    {
+      "anchor_hz": 432,
+      "exponent": -4,
+      "ratio": 0.14589803375031543,
+      "frequency_hz": 63.02795058013626,
+      "cents_from_anchor": -3332.3611854269634,
+      "period_ms": 15.865976773726125,
+      "wavelength_air_20c_m": 5.442030033388061
+    },
+    {
+      "anchor_hz": 432,
+      "exponent": -3,
+      "ratio": 0.23606797749978967,
+      "frequency_hz": 101.98136627990914,
+      "cents_from_anchor": -2499.270889070223,
+      "period_ms": 9.805712910879144,
+      "wavelength_air_20c_m": 3.3633595284315465
+    },
+    {
+      "anchor_hz": 432,
+      "exponent": -2,
+      "ratio": 0.38196601125010515,
+      "frequency_hz": 165.00931686004543,
+      "cents_from_anchor": -1666.1805927134815,
+      "period_ms": 6.060263862846979,
+      "wavelength_air_20c_m": 2.0786705049565137
+    },
+    {
+      "anchor_hz": 432,
+      "exponent": -1,
+      "ratio": 0.6180339887498948,
+      "frequency_hz": 266.99068313995457,
+      "cents_from_anchor": -833.0902963567409,
+      "period_ms": 3.7454490480321643,
+      "wavelength_air_20c_m": 1.2846890234750323
+    },
+    {
+      "anchor_hz": 432,
+      "exponent": 0,
+      "ratio": 1.0,
+      "frequency_hz": 432.0,
+      "cents_from_anchor": 0.0,
+      "period_ms": 2.314814814814815,
+      "wavelength_air_20c_m": 0.7939814814814815
+    },
+    {
+      "anchor_hz": 432,
+      "exponent": 1,
+      "ratio": 1.618033988749895,
+      "frequency_hz": 698.9906831399546,
+      "cents_from_anchor": 833.0902963567409,
+      "period_ms": 1.4306342332173492,
+      "wavelength_air_20c_m": 0.4907075419935507
+    },
+    {
+      "anchor_hz": 432,
+      "exponent": 2,
+      "ratio": 2.618033988749895,
+      "frequency_hz": 1130.9906831399546,
+      "cents_from_anchor": 1666.1805927134815,
+      "period_ms": 0.8841805815974656,
+      "wavelength_air_20c_m": 0.3032739394879307
+    },
+    {
+      "anchor_hz": 432,
+      "exponent": 3,
+      "ratio": 4.23606797749979,
+      "frequency_hz": 1829.9813662799093,
+      "cents_from_anchor": 2499.270889070222,
+      "period_ms": 0.5464536516198836,
+      "wavelength_air_20c_m": 0.18743360250562005
+    },
+    {
+      "anchor_hz": 432,
+      "exponent": 4,
+      "ratio": 6.854101966249686,
+      "frequency_hz": 2960.972049419864,
+      "cents_from_anchor": 3332.3611854269634,
+      "period_ms": 0.337726929977582,
+      "wavelength_air_20c_m": 0.11584033698231064
+    },
+    {
+      "anchor_hz": 432,
+      "exponent": 5,
+      "ratio": 11.090169943749476,
+      "frequency_hz": 4790.953415699773,
+      "cents_from_anchor": 4165.451481783704,
+      "period_ms": 0.20872672164230147,
+      "wavelength_air_20c_m": 0.0715932655233094
+    },
+    {
+      "anchor_hz": 432,
+      "exponent": 6,
+      "ratio": 17.944271909999163,
+      "frequency_hz": 7751.925465119638,
+      "cents_from_anchor": 4998.541778140446,
+      "period_ms": 0.12900020833528056,
+      "wavelength_air_20c_m": 0.04424707145900123
+    },
+    {
+      "anchor_hz": 440,
+      "exponent": -6,
+      "ratio": 0.0557280900008412,
+      "frequency_hz": 24.520359600370128,
+      "cents_from_anchor": -4998.541778140446,
+      "period_ms": 40.78243615908901,
+      "wavelength_air_20c_m": 13.98837560256753
+    },
+    {
+      "anchor_hz": 440,
+      "exponent": -5,
+      "ratio": 0.09016994374947422,
+      "frequency_hz": 39.67477524976866,
+      "cents_from_anchor": -4165.451481783704,
+      "period_ms": 25.20493169033972,
+      "wavelength_air_20c_m": 8.645291569786524
+    },
+    {
+      "anchor_hz": 440,
+      "exponent": -4,
+      "ratio": 0.14589803375031543,
+      "frequency_hz": 64.19513485013879,
+      "cents_from_anchor": -3332.3611854269634,
+      "period_ms": 15.577504468749286,
+      "wavelength_air_20c_m": 5.343084032781006
+    },
+    {
+      "anchor_hz": 440,
+      "exponent": -3,
+      "ratio": 0.23606797749978967,
+      "frequency_hz": 103.86991009990746,
+      "cents_from_anchor": -2499.270889070223,
+      "period_ms": 9.627427221590432,
+      "wavelength_air_20c_m": 3.302207537005518
+    },
+    {
+      "anchor_hz": 440,
+      "exponent": -2,
+      "ratio": 0.38196601125010515,
+      "frequency_hz": 168.06504495004626,
+      "cents_from_anchor": -1666.1805927134815,
+      "period_ms": 5.950077247158852,
+      "wavelength_air_20c_m": 2.0408764957754864
+    },
+    {
+      "anchor_hz": 440,
+      "exponent": -1,
+      "ratio": 0.6180339887498948,
+      "frequency_hz": 271.9349550499537,
+      "cents_from_anchor": -833.0902963567409,
+      "period_ms": 3.6773499744315794,
+      "wavelength_air_20c_m": 1.2613310412300318
+    },
+    {
+      "anchor_hz": 440,
+      "exponent": 0,
+      "ratio": 1.0,
+      "frequency_hz": 440.0,
+      "cents_from_anchor": 0.0,
+      "period_ms": 2.272727272727273,
+      "wavelength_air_20c_m": 0.7795454545454545
+    },
+    {
+      "anchor_hz": 440,
+      "exponent": 1,
+      "ratio": 1.618033988749895,
+      "frequency_hz": 711.9349550499537,
+      "cents_from_anchor": 833.0902963567409,
+      "period_ms": 1.4046227017043065,
+      "wavelength_air_20c_m": 0.48178558668457716
+    },
+    {
+      "anchor_hz": 440,
+      "exponent": 2,
+      "ratio": 2.618033988749895,
+      "frequency_hz": 1151.9349550499537,
+      "cents_from_anchor": 1666.1805927134815,
+      "period_ms": 0.8681045710229662,
+      "wavelength_air_20c_m": 0.29775986786087744
+    },
+    {
+      "anchor_hz": 440,
+      "exponent": 3,
+      "ratio": 4.23606797749979,
+      "frequency_hz": 1863.8699100999074,
+      "cents_from_anchor": 2499.270889070222,
+      "period_ms": 0.5365181306813402,
+      "wavelength_air_20c_m": 0.1840257188236997
+    },
+    {
+      "anchor_hz": 440,
+      "exponent": 4,
+      "ratio": 6.854101966249686,
+      "frequency_hz": 3015.8048651498616,
+      "cents_from_anchor": 3332.3611854269634,
+      "period_ms": 0.331586440341626,
+      "wavelength_air_20c_m": 0.11373414903717771
+    },
+    {
+      "anchor_hz": 440,
+      "exponent": 5,
+      "ratio": 11.090169943749476,
+      "frequency_hz": 4879.6747752497695,
+      "cents_from_anchor": 4165.451481783704,
+      "period_ms": 0.20493169033971415,
+      "wavelength_air_20c_m": 0.07029156978652196
+    },
+    {
+      "anchor_hz": 440,
+      "exponent": 6,
+      "ratio": 17.944271909999163,
+      "frequency_hz": 7895.4796403996315,
+      "cents_from_anchor": 4998.541778140446,
+      "period_ms": 0.12665475000191181,
+      "wavelength_air_20c_m": 0.043442579250655755
+    }
+  ],
+  "octave_folded_phi_scale": [
+    {
+      "source_exponent": 0,
+      "ratio": 1.0,
+      "cents": 0.0
+    },
+    {
+      "source_exponent": 3,
+      "ratio": 1.0590169943749477,
+      "cents": 99.2708890702227
+    },
+    {
+      "source_exponent": 6,
+      "ratio": 1.121516994374948,
+      "cents": 198.5417781404453
+    },
+    {
+      "source_exponent": 9,
+      "ratio": 1.187705556523382,
+      "cents": 297.8126672106675
+    },
+    {
+      "source_exponent": 2,
+      "ratio": 1.3090169943749477,
+      "cents": 466.1805927134819
+    },
+    {
+      "source_exponent": 5,
+      "ratio": 1.3862712429686845,
+      "cents": 565.4514817837041
+    },
+    {
+      "source_exponent": 8,
+      "ratio": 1.4680848051171191,
+      "cents": 664.7223708539268
+    },
+    {
+      "source_exponent": 11,
+      "ratio": 1.5547267578026618,
+      "cents": 763.993259924149
+    },
+    {
+      "source_exponent": 1,
+      "ratio": 1.618033988749895,
+      "cents": 833.0902963567409
+    },
+    {
+      "source_exponent": 4,
+      "ratio": 1.7135254915624214,
+      "cents": 932.3611854269633
+    },
+    {
+      "source_exponent": 7,
+      "ratio": 1.8146526158592904,
+      "cents": 1031.632074497186
+    },
+    {
+      "source_exponent": 10,
+      "ratio": 1.9217479590819417,
+      "cents": 1130.9029635674085
+    }
+  ],
+  "fibonacci_convergence": [
+    {
+      "n": 1,
+      "f_n": 1,
+      "f_n_plus_1": 2,
+      "ratio": 2.0,
+      "error_from_phi": 0.3819660112501051
+    },
+    {
+      "n": 2,
+      "f_n": 2,
+      "f_n_plus_1": 3,
+      "ratio": 1.5,
+      "error_from_phi": -0.1180339887498949
+    },
+    {
+      "n": 3,
+      "f_n": 3,
+      "f_n_plus_1": 5,
+      "ratio": 1.6666666666666667,
+      "error_from_phi": 0.04863267791677184
+    },
+    {
+      "n": 4,
+      "f_n": 5,
+      "f_n_plus_1": 8,
+      "ratio": 1.6,
+      "error_from_phi": -0.018033988749894814
+    },
+    {
+      "n": 5,
+      "f_n": 8,
+      "f_n_plus_1": 13,
+      "ratio": 1.625,
+      "error_from_phi": 0.0069660112501050975
+    },
+    {
+      "n": 6,
+      "f_n": 13,
+      "f_n_plus_1": 21,
+      "ratio": 1.6153846153846154,
+      "error_from_phi": -0.0026493733652794837
+    },
+    {
+      "n": 7,
+      "f_n": 21,
+      "f_n_plus_1": 34,
+      "ratio": 1.619047619047619,
+      "error_from_phi": 0.0010136302977241662
+    },
+    {
+      "n": 8,
+      "f_n": 34,
+      "f_n_plus_1": 55,
+      "ratio": 1.6176470588235294,
+      "error_from_phi": -0.00038692992636546464
+    },
+    {
+      "n": 9,
+      "f_n": 55,
+      "f_n_plus_1": 89,
+      "ratio": 1.6181818181818182,
+      "error_from_phi": 0.00014782943192326314
+    },
+    {
+      "n": 10,
+      "f_n": 89,
+      "f_n_plus_1": 144,
+      "ratio": 1.6179775280898876,
+      "error_from_phi": -5.6460660007306984e-05
+    },
+    {
+      "n": 11,
+      "f_n": 144,
+      "f_n_plus_1": 233,
+      "ratio": 1.6180555555555556,
+      "error_from_phi": 2.15668056606777e-05
+    },
+    {
+      "n": 12,
+      "f_n": 233,
+      "f_n_plus_1": 377,
+      "ratio": 1.6180257510729614,
+      "error_from_phi": -8.237676933475768e-06
+    },
+    {
+      "n": 13,
+      "f_n": 377,
+      "f_n_plus_1": 610,
+      "ratio": 1.6180371352785146,
+      "error_from_phi": 3.1465286196574738e-06
+    },
+    {
+      "n": 14,
+      "f_n": 610,
+      "f_n_plus_1": 987,
+      "ratio": 1.618032786885246,
+      "error_from_phi": -1.2018646489142526e-06
+    }
+  ],
+  "reference_notes": {
+    "440_hz": "ISO 16 standard tuning frequency for the musical note A; default web reference.",
+    "432_hz": "Optional creative/reference anchor only; no privileged biological, healing, cosmic, or metaphysical status is claimed.",
+    "anchor_invariance": "Changing f0 changes absolute frequencies but not the phi ratios.",
+    "playback_window_hz": [
+      20,
+      20000
+    ],
+    "octave_folded_set": "Uses source exponents 0 through 11 as one finite experimental sample; twelve is a design choice, not a canonical golden-ratio scale."
+  }
+}

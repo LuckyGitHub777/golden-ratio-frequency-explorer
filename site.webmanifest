@@ -1,0 +1,9 @@
+{
+  "name": "Golden Ratio Frequency Lab",
+  "short_name": "\u03c6 Frequency Lab",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#080806",
+  "theme_color": "#080806",
+  "description": "Explore exact golden-ratio frequency relationships through mathematics, local sound synthesis, and visual structure."
+}
