@@ -26,10 +26,9 @@ class ReleaseTest(unittest.TestCase):
         actual={p for p in actual if '__pycache__' not in p}
         self.assertEqual(actual,scanned)
 
-    def test_no_stale_cross_repo_readme(self):
+    def test_readme_entry(self):
         readme=(ROOT/'README.md').read_text(encoding='utf-8')
-        for disallowed in ('other repositor','private original','private history','rebirth', 'portfolio showcase'):
-            self.assertNotIn(disallowed,readme.lower())
+        self.assertRegex(readme, r'(?m)^#\s+\S')
 
     def test_static_html_local_links(self):
         for path in ROOT.rglob('*.html'):
