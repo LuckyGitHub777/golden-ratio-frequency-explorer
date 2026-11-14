@@ -1,4 +1,4 @@
-name: Verify independent source edition
+name: Verify
 on:
   push:
     branches: [main]
